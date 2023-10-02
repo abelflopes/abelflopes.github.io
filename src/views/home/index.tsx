@@ -1,11 +1,11 @@
 // React
 import React from "react";
 // Layouts
-import { DefaultLayout } from "@layouts/Default";
+import { Layout } from "@components/layout-default";
 
 export const HomeView = (): React.ReactElement => (
-  <DefaultLayout>
+  <Layout>
     <h1>Home</h1>
     <p>This is the initial page of the template</p>
-  </DefaultLayout>
+  </Layout>
 );

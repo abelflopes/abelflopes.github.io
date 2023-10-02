@@ -1,7 +1,6 @@
 // Router
 import type { RouteObject } from "react-router-dom";
 // Views & Redirects
-import * as Redirects from "./redirects";
 import * as Views from "./views";
 
 // DOCS: https://beta.reactrouter.com/en/v6.3.0/upgrading/v5#upgrade-all-switch-elements-to-routes
@@ -12,7 +11,6 @@ export interface View {
 }
 
 export const allRoutes = {
-  ...Redirects,
   ...Views,
 };
 

@@ -20,14 +20,8 @@
     /* Aliases */
     "paths": {
       "@components/*": ["./src/components/*"],
-      "@layouts/*": ["./src/layouts/*"],
       "@router/*": ["./src/router/*"],
-      "@services/*": ["./src/services/*"],
-      "@store/*": ["./src/store/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@views/*": ["./src/views/*"],
-      "@root/*": ["./*"]
-    }
+      "@views/*": ["./src/views/*"],    }
   },
   "include": ["./**/*"],
   "references": [{ "path": "./tsconfig.node.json" }]
