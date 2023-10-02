@@ -8,7 +8,7 @@ import { requiredRoutePath } from "@router/utils/required-route-path";
 import { Layout } from "@components/layout-error";
 
 export const Error404View = (): React.ReactElement => (
-  <Layout title="Something went wrong" description="The requested page was not found">
+  <Layout heading="Something went wrong" description="The requested page was not found">
     <NavLink to={requiredRoutePath(allRoutes.home)}>Go to initial page</NavLink>
   </Layout>
 );

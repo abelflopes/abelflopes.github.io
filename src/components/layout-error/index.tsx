@@ -1,22 +1,28 @@
 import styles from "./index.module.scss";
 /// React
 import React from "react";
-
-interface LayoutProps {
-  title: React.ReactNode;
+// Utils
+import classNames from "classnames";
+import { Container } from "@components/container";
+interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
+  heading: React.ReactNode;
   description: React.ReactNode;
   children: React.ReactNode | React.ReactNode[];
 }
 
 export const Layout = ({
-  title,
+  heading,
   description,
   children,
+  className,
+  ...otherProps
 }: Readonly<LayoutProps>): React.ReactElement => (
-  <main className={styles.root}>
-    <h2>{title}</h2>
-    <p>{description}</p>
+  <div {...otherProps} className={classNames(className, styles.root)}>
+    <Container>
+      <h2>{heading}</h2>
+      <p>{description}</p>
 
-    {children}
-  </main>
+      {children}
+    </Container>
+  </div>
 );

@@ -1,8 +1,30 @@
 /* stylelint-disable selector-max-type */
 
+:root {
+  --theme-content-width: 900px;
+  --theme-spacing: 16px;
+  --theme-background: #131818;
+  --theme-background-alt: #0e0b1e;
+  --theme-text-color: #cdd6c8;
+}
+
+html,
 body {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--theme-background);
+  background-image: linear-gradient(135deg, var(--theme-background), var(--theme-background-alt));
+  color: var(--theme-text-color);
   font-family: sans-serif;
-  max-width: 700px;
-  padding: 0 20px 20px;
-  margin: 0 auto;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  margin: 0;
+}
+
+a {
+  color: currentColor;
 }
