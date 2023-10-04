@@ -1,5 +1,5 @@
+@import "./mixins";
+
 .root {
-  max-width: var(--theme-content-width);
-  margin: 0 auto;
-  padding: 0 calc(var(--theme-spacing) * 2);
+  @include container;
 }

@@ -1,23 +1,37 @@
 import styles from "./index.module.scss";
 /// React
-import React from "react";
+import React, { type ReactHTML } from "react";
 // Utils
 import classNames from "classnames";
 // Components
 import { Container } from "@components/container";
+import { ThemeContextOverride } from "@components/theme/context";
 
-interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
+interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+  colorScheme?: "default" | "inverted";
+  tag?: keyof ReactHTML;
   children: React.ReactNode | React.ReactNode[];
 }
 
 export const Section = ({
+  colorScheme = "default",
+  tag = "section",
   className,
   children,
   ...otherProps
 }: Readonly<SectionProps>): React.ReactElement => {
+  const element = React.createElement(
+    tag,
+    {
+      ...otherProps,
+      className: classNames(className, styles.root, {
+        [styles[colorScheme]]: colorScheme !== "default",
+      }),
+    },
+    <Container>{children}</Container>,
+  );
+
   return (
-    <section {...otherProps} className={classNames(className, styles.root)}>
-      <Container>{children}</Container>
-    </section>
+    <ThemeContextOverride inverted={colorScheme === "inverted"}>{element}</ThemeContextOverride>
   );
 };

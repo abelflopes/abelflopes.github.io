@@ -1,0 +1,38 @@
+.root {
+  background-color: var(--theme-background-alt);
+}
+
+.header {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(0deg, rgba(#000, 1), rgba(#000, 0.1));
+  }
+}
+
+.heading {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+  padding: 0 var(--theme-spacing);
+}
+
+.content {
+  padding: var(--theme-spacing);
+}
+
+.image {
+  display: block;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}

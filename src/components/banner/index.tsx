@@ -5,6 +5,7 @@ import React from "react";
 import classNames from "classnames";
 // Components
 import { Container } from "@components/container";
+import { Text } from "@components/text";
 
 interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: string;
@@ -24,23 +25,17 @@ export const Banner = ({
   return (
     <div {...otherPRops} className={classNames(className, styles.root)}>
       <Container className={styles.container}>
-        <div className={styles.content}>
-          <h1 className={styles.heading}>{heading}</h1>
-
-          <div>
-            {social.map((item) => (
-              <span key={item.key} className={styles.social}>
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.content}>
+        <div className={styles.header}>
           <img {...media} alt={media.alt} className={classNames(media.className, styles.image)} />
 
-          {children}
+          <Text skin="banner" className={styles.heading} margin={false}>
+            {heading}
+          </Text>
         </div>
+
+        {children}
+
+        <div className={styles.social}>{social}</div>
       </Container>
       <img alt="Background" src={media.src} className={styles.bg} />
     </div>

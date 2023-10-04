@@ -1,3 +1,8 @@
 .root {
-  color: currentColor;
+  color: var(--theme-text-color-strong);
+
+  // Add margin for icons next to each other
+  & + & {
+    margin-left: var(--theme-spacing);
+  }
 }

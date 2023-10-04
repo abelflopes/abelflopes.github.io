@@ -1,30 +1,39 @@
 /* stylelint-disable selector-max-type */
 
-:root {
-  --theme-content-width: 900px;
-  --theme-spacing: 16px;
-  --theme-background: #131818;
-  --theme-background-alt: #0e0b1e;
-  --theme-text-color: #cdd6c8;
+@keyframes bgImage {
+  100%,
+  0% {
+    background-color: var(--theme-background);
+  }
+
+  33% {
+    background-color: hsl(176, 71%, 11%);
+  }
+
+  66% {
+    background-color: hsl(299, 71%, 11%);
+  }
 }
 
 html,
 body {
   min-height: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--theme-nav-height) + var(--theme-spacing));
 }
 
 body {
   background-color: var(--theme-background);
-  background-image: linear-gradient(135deg, var(--theme-background), var(--theme-background-alt));
-  color: var(--theme-text-color);
-  font-family: sans-serif;
-  font-size: 16px;
-  line-height: 22px;
-  letter-spacing: 1px;
-  font-weight: 300;
+  background-image: linear-gradient(90deg, transparent, var(--theme-background-alt) 150%);
   margin: 0;
+
+  animation: bgImage 90s infinite;
 }
 
 a {
   color: currentColor;
+}
+
+h2 {
+  margin-top: 0;
 }
