@@ -89,14 +89,12 @@ export const HomeView = (): React.ReactElement => (
     </Section>
     <Footer
       details={[
-        // eslint-disable-next-line react/jsx-key
-        <div>
+        <div key="social">
           {Object.values(SOCIAL).map(({ title, url, icon }) => (
             <Icon key={icon} name={icon as IconProps["name"]} title={title} url={url} />
           ))}
         </div>,
-        // eslint-disable-next-line react/jsx-key
-        <Text>All Rights Reserved @ {NAME}</Text>,
+        <Text key="rights">All Rights Reserved @ {NAME}</Text>,
       ]}>
       <Text id="contact" skin="h2">
         Contact

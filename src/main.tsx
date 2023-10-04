@@ -3,6 +3,7 @@ import "./styles/index.scss";
 // React
 import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
+
 // Router
 import { DefaultRouter } from "@router/router/Default";
 // Components

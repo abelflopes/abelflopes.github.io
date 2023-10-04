@@ -28,7 +28,6 @@ export const Nav = ({
 
     const observer = new IntersectionObserver(
       ([e]) => {
-        console.log(e);
         e.target.classList.toggle(styles.sticky_active, e.isIntersecting);
       },
       {
