@@ -1,11 +1,11 @@
 :root {
   --theme-color-background: hsl(270deg 70% 11%);
   --theme-color-background-alt: #000;
-  --theme-color-text: rgb(203 203 203 / 80%);
-  --theme-color-text-strong: rgb(220 220 220);
+  --theme-color-text: #{rgba(#fff, 0.75)};
+  --theme-color-text-strong: #fff;
   --theme-color-border: hsla(100deg 14% 81% / 15%);
 
-  --theme-base-font-size: 15px;
+  --theme-base-font-size: 16px;
   --theme-font-family: "Arial";
   --theme-nav-height: 60px;
   --theme-content-width: 900px;

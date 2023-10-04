@@ -3,9 +3,9 @@ import styles from "./index.module.scss";
 import React from "react";
 // Utils
 import classNames from "classnames";
-import { Text } from "@components/text";
-import { ThemeContextOverride } from "@components/theme/context";
 // Components
+import { ThemeContextOverride } from "@components/theme/context";
+import { Text } from "@components/text";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: string;
@@ -33,13 +33,18 @@ export const Card = ({
         </div>
         <div className={styles.content}>
           {children}
-          <Text
-            as={
-              <a href={link} target="_blank" rel="noreferrer">
-                {link?.replace("https://", "").replace("www.", "")}
-              </a>
-            }
-          />
+
+          {link && (
+            <Text
+              className={styles.link}
+              skin="small"
+              as={
+                <a href={link} target="_blank" rel="noreferrer">
+                  View more
+                </a>
+              }
+            />
+          )}
         </div>
       </div>
     </ThemeContextOverride>

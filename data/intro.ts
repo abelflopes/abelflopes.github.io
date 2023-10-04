@@ -1,6 +1,6 @@
 export const NAME = "Abel Lopes";
 
-export const DESCRIPTION = `Senior frontend engineer with
+export const DESCRIPTION = `Senior frontend engineer specialized in React with
 ${Math.ceil((Date.now() - new Date("12-01-2014").getTime()) / 1000 / 60 / 60 / 24 / 30 / 12)}
 years of professional experience, including building highly interactive websites, developing mobile applications, working with microfrontends, defining architecture, implementing infrastructure, team leadership and project management.`;
 

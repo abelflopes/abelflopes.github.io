@@ -1,8 +1,11 @@
+@import "../container/mixins";
+
 $bp: 900px;
 $img-width: 130px;
 
 .root {
   overflow: hidden; // hide overflow caused by image blur
+  position: relative;
 
   @media (width <= $bp) {
     padding: calc(var(--theme-spacing) * 6) 0;
@@ -10,43 +13,26 @@ $img-width: 130px;
 
   @media (width > $bp) {
     height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
 
 .container {
+  @include container;
+
+  position: relative;
+
   @media (width > $bp) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    padding-right: 30%;
     padding-bottom: var(--theme-nav-height);
   }
 }
 
-.header {
-  position: relative;
-  display: flex;
-  padding-left: calc(var(--theme-spacing) * 2 + #{$img-width});
-  margin-bottom: calc(var(--theme-spacing) * 3);
-}
-
-.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  filter: blur(20px);
-  mix-blend-mode: overlay;
-  opacity: 0.8;
-}
-
 .image {
+  object-fit: cover;
   position: absolute;
   top: -8px;
-  left: 0;
   height: 170px;
   width: $img-width;
   mix-blend-mode: lighten;
@@ -54,18 +40,52 @@ $img-width: 130px;
   clip: rect(0px, 130px, 133px, 0px);
 }
 
-.bg,
-.image {
-  object-fit: cover;
-}
-
 .heading {
-  padding-right: 50%;
+  padding-left: calc(var(--theme-spacing) * 2 + #{$img-width});
   position: relative;
   left: -12px; // Align text with parent element limit
-  margin: 0;
 }
 
+.description {
+  max-width: 500px;
+}
+
+.description,
 .social {
-  margin-top: calc(var(--theme-spacing) * 2);
+  margin-top: calc(var(--theme-spacing) * 3) !important;
+}
+
+.bg_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  mix-blend-mode: plus-lighter;
+  opacity: 0.3;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(transparent 50%, black);
+  }
+}
+
+.bg {
+  $blur: 20px;
+
+  object-fit: cover;
+  position: absolute;
+  top: #{$blur * -1};
+  left: #{$blur * -1};
+  height: calc(100% + #{$blur * 2});
+  width: calc(100% + #{$blur * 2});
+  z-index: -1;
+  filter: blur($blur);
 }

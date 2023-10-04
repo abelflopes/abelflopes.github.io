@@ -23,11 +23,12 @@
   width: 100%;
   margin: 0;
   z-index: 1;
-  padding: 0 var(--theme-spacing);
+  padding: 0 calc(var(--theme-spacing) * 2);
+  box-sizing: border-box;
 }
 
 .content {
-  padding: var(--theme-spacing);
+  padding: var(--theme-spacing) calc(var(--theme-spacing) * 2);
 }
 
 .image {
@@ -35,4 +36,9 @@
   height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.link {
+  display: block;
+  margin-top: var(--theme-spacing);
 }

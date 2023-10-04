@@ -7,7 +7,7 @@ import { useThemeContext } from "@components/theme/context";
 
 export interface TextProps extends React.HTMLAttributes<HTMLElement> {
   margin?: boolean;
-  skin?: "banner" | "h1" | "h2" | "h3" | "p";
+  skin?: "banner" | "h1" | "h2" | "h3" | "p" | "small";
   children?: React.ReactNode | React.ReactNode[];
   as?: React.ReactElement;
 }
@@ -24,10 +24,15 @@ export const Text = ({
 
   const computedClassNames = useMemo(
     () =>
-      classNames(className, styles.root, styles[skin], {
-        [styles.margin]: margin,
-        [styles.inverted]: theme.inverted,
-      }),
+      classNames(
+        styles.root,
+        styles[skin],
+        {
+          [styles.margin]: margin,
+          [styles.inverted]: theme.inverted,
+        },
+        className,
+      ),
     [className, margin, skin, theme.inverted],
   );
 
@@ -37,6 +42,11 @@ export const Text = ({
     switch (skin) {
       case "banner": {
         value = "h1";
+        break;
+      }
+
+      case "small": {
+        value = "p";
         break;
       }
 

@@ -13,7 +13,7 @@ import { Nav } from "@components/nav";
 import { Text } from "@components/text";
 import { EXPERIENCE } from "@data/experience";
 import { Separator } from "@components/separator";
-import { PORTFOLIO } from "@data/portfolio";
+import { PORTFOLIO, PORTFOLIO_DESCRIPTION } from "@data/portfolio";
 import { Card } from "@components/card";
 import { Gallery } from "@components/gallery";
 
@@ -28,7 +28,7 @@ export const HomeView = (): React.ReactElement => (
       social={Object.values(SOCIAL).map(({ title, url, icon }) => (
         <Icon key={icon} name={icon as IconProps["name"]} title={title} url={url} />
       ))}>
-      <Text>{DESCRIPTION}</Text>
+      {DESCRIPTION}
     </Banner>
     <Nav
       sticky
@@ -48,7 +48,7 @@ export const HomeView = (): React.ReactElement => (
       ]}
     />
     <Section>
-      <Text id="experience" skin="h2">
+      <Text id="experience-tech-stack-and-skills" skin="h2">
         Experience, Tech Stack & Skills
       </Text>
       {EXPERIENCE.map((i) => (
@@ -70,14 +70,13 @@ export const HomeView = (): React.ReactElement => (
       </Text>
     </Section>
     <Section colorScheme="inverted">
-      <Text skin="h2">Portfolio</Text>
-
-      <Text>
-        Most of my contributions are private as they were done for the companies & clients I worked
-        for and cannot be disclosed, the context of those contributions fully relates to the
-        experience listed above. However I have recently been starting to contribute to the
-        community and I will continue to add open projects.
+      <Text id="projects" skin="h2">
+        Projects
       </Text>
+
+      {PORTFOLIO_DESCRIPTION.map((item) => (
+        <Text key={item}>{item}</Text>
+      ))}
 
       <Gallery
         className={styles.gallery}
@@ -99,7 +98,9 @@ export const HomeView = (): React.ReactElement => (
         // eslint-disable-next-line react/jsx-key
         <Text>All Rights Reserved @ {NAME}</Text>,
       ]}>
-      <Text skin="h2">Contact</Text>
+      <Text id="contact" skin="h2">
+        Contact
+      </Text>
       <Text>
         I'm open to collaborate and take new projects, send me a message on &nbsp;
         <a href={SOCIAL.linkedin.url} target="_blank" rel="noreferrer">

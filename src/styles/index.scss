@@ -26,14 +26,9 @@ body {
   background-color: var(--theme-background);
   background-image: linear-gradient(90deg, transparent, var(--theme-background-alt) 150%);
   margin: 0;
-
   animation: bgImage 90s infinite;
 }
 
 a {
   color: currentColor;
-}
-
-h2 {
-  margin-top: 0;
 }
