@@ -1,19 +1,20 @@
-# React App Template
+# Hi there, I'm Abel.
 
-Template repo for react apps using redux-toolkit, css-modules and vite.
+I'm a front-end lead engineer specialised in react.<br />
+I have vast experience developing single page applications, libraries,<br />
+microfrontends, design systems and front-end infrastructure.<br />
+Happy to collaborate on new projects!
 
-## Commands
+  
+- Top **1 Typescript** Developer Portugal<br/>
+- Top **1 ReduxJS** Developer Portugal<br/>
+- Top **5 ReactJS** Developer Portugal<br/>
+- Top **1 SCSS** Developer Portugal<br/>
+- Top **1 Webpack** Developer Portugal<br />
 
-- Setup
-  - Install local dependencies `npm i`
-- Development / Build
-  - `npm start` - starts the development environment in development mode
-  - `npm run build` - builds and exports the application to the output folder in production mode
-- Linters
-  - `npm run lint` - Run all linters
-  - `npm run lint:code` - lints TS files, supports ` -- --fix` suffix for auto-fixing
-  - `npm run lint:style` - lints SCSS files, supports ` -- --fix` suffix for auto-fixing
-  - `npm run format` - lints all files (formatting only), supports ` -- --write` suffix for auto-fixing
-- Other
-  - `npm run todo` - list all TODO's and FIXME's
-  - `npm run clean` - clean temporary and dependency folders
+[LinkedIn](https://www.linkedin.com/in/abelflopes) | [CodersRank](https://profile.codersrank.io/user/abelflopes/) | [Npm](https://www.npmjs.com/~abelflopes) | [CodePen](https://codepen.io/abelflopes) | [GitHub](https://github.com/abelflopes) 
+
+![Github Stats](./docs/assets/stats.svg)
+
+</div>
+
