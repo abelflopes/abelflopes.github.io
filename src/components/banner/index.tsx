@@ -4,7 +4,6 @@ import React from "react";
 // Utils
 import classNames from "classnames";
 // Components
-import { Container } from "@components/container";
 import { Text } from "@components/text";
 
 interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {

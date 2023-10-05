@@ -4,17 +4,17 @@ $bp: 900px;
 $img-width: 130px;
 
 .root {
-  overflow: hidden; // hide overflow caused by image blur
   position: relative;
+  overflow: hidden; // hide overflow caused by image blur
 
   @media (width <= $bp) {
     padding: calc(var(--theme-spacing) * 6) 0 0;
   }
 
   @media (width > $bp) {
-    height: 100dvh;
     display: flex;
     flex-direction: column;
+    height: 100dvh;
     justify-content: center;
   }
 }
@@ -26,14 +26,14 @@ $img-width: 130px;
 }
 
 .image {
-  object-fit: cover;
   position: absolute;
   top: -8px;
-  height: 170px;
   width: $img-width;
-  mix-blend-mode: lighten;
+  height: 170px;
   opacity: 0.8;
-  clip: rect(0px, 130px, 133px, 0px);
+  object-fit: cover;
+  mix-blend-mode: lighten;
+  clip: rect(0, 130px, 133px, 0);
 
   @media (380px <= width <= 450px) {
     right: calc(var(--theme-spacing) * 2);
@@ -66,20 +66,20 @@ $img-width: 130px;
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
   overflow: hidden;
+  opacity: 0.3;
   z-index: -1;
   mix-blend-mode: plus-lighter;
-  opacity: 0.3;
 
   &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100%;
+    height: 100%;
     background-image: linear-gradient(transparent 50%, black);
   }
 }
@@ -87,12 +87,12 @@ $img-width: 130px;
 .bg {
   $blur: 20px;
 
-  object-fit: cover;
   position: absolute;
   top: #{$blur * -1};
   left: #{$blur * -1};
-  height: calc(100% + #{$blur * 2});
   width: calc(100% + #{$blur * 2});
+  height: calc(100% + #{$blur * 2});
   z-index: -1;
+  object-fit: cover;
   filter: blur($blur);
 }

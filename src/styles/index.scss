@@ -7,11 +7,11 @@
   }
 
   33% {
-    background-color: hsl(176, 71%, 11%);
+    background-color: hsl(176deg 71% 11%);
   }
 
   66% {
-    background-color: hsl(299, 71%, 11%);
+    background-color: hsl(299deg 71% 11%);
   }
 }
 
@@ -30,5 +30,5 @@ body {
 }
 
 a {
-  color: currentColor;
+  color: currentcolor;
 }

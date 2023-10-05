@@ -1,9 +1,9 @@
 import "./index.module.scss";
 /// React
-import React from "react";
+import type React from "react";
 
 interface ThemeProps {
-  children: React.ReactElement | React.ReactElement[];
+  children: React.ReactElement;
 }
 
-export const Theme = ({ children }: Readonly<ThemeProps>): React.ReactElement => <>{children}</>;
+export const Theme = ({ children }: Readonly<ThemeProps>): React.ReactElement => children;

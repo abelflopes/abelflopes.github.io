@@ -7,11 +7,11 @@
   .container {
     @include container;
 
-    border-top: solid var(--theme-separator-width) var(--theme-border-color);
-    height: 100%;
     display: flex;
     box-sizing: border-box;
+    height: 100%;
     justify-content: space-around;
+    border-top: solid var(--theme-separator-width) var(--theme-border-color);
   }
 
   &.sticky {
@@ -31,8 +31,8 @@
 }
 
 .item {
-  text-decoration: none;
   display: inline-flex;
-  align-items: center;
   height: 100%;
+  align-items: center;
+  text-decoration: none;
 }

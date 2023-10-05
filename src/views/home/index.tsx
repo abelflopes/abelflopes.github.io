@@ -101,7 +101,7 @@ export const HomeView = (): React.ReactElement => (
         Contact
       </Text>
       <Text>
-        I'm open to collaborate and take new projects, send me a message on &nbsp;
+        I&apos;m open to collaborate and take new projects, send me a message on &nbsp;
         <a href={SOCIAL.linkedin.url} target="_blank" rel="noreferrer">
           {SOCIAL.linkedin.title}
         </a>

@@ -5,6 +5,7 @@ import React from "react";
 import { type IconType } from "react-icons";
 import { SiLinkedin, SiCodersrank, SiNpm, SiCodepen, SiGithub } from "react-icons/si";
 
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const icons = {
   SiLinkedin,
   SiCodersrank,
@@ -12,6 +13,7 @@ const icons = {
   SiCodepen,
   SiGithub,
 };
+/* eslint-enable @typescript-eslint/no-unsafe-assignment */
 export interface IconProps extends Omit<IconType, "size"> {
   title?: string;
   url?: string;

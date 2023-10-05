@@ -1,7 +1,7 @@
 @mixin container {
+  box-sizing: border-box;
   width: 100%;
   max-width: var(--theme-content-width);
-  margin: 0 auto;
   padding: 0 calc(var(--theme-spacing) * 2);
-  box-sizing: border-box;
+  margin: 0 auto;
 }
