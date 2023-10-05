@@ -1,3 +1,11 @@
+.nav {
+  margin-top: calc(var(--theme-nav-height) * -1); // overlay banner
+
+  @media (width < 900px) {
+    display: none;
+  }
+}
+
 .gallery {
   margin-top: calc(var(--theme-spacing) * 3);
 }

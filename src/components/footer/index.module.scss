@@ -1,5 +1,9 @@
 .root {
   position: relative;
+
+  @media (width < 600px) {
+    text-align: center;
+  }
 }
 
 .details {
@@ -7,4 +11,10 @@
   align-items: center;
   justify-content: space-between;
   margin-top: calc(var(--theme-spacing) * 4);
+
+  @media (width < 600px) {
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(var(--theme-spacing) * 3);
+  }
 }

@@ -8,7 +8,7 @@ $img-width: 130px;
   position: relative;
 
   @media (width <= $bp) {
-    padding: calc(var(--theme-spacing) * 6) 0;
+    padding: calc(var(--theme-spacing) * 6) 0 0;
   }
 
   @media (width > $bp) {
@@ -23,10 +23,6 @@ $img-width: 130px;
   @include container;
 
   position: relative;
-
-  @media (width > $bp) {
-    padding-bottom: var(--theme-nav-height);
-  }
 }
 
 .image {
@@ -38,12 +34,23 @@ $img-width: 130px;
   mix-blend-mode: lighten;
   opacity: 0.8;
   clip: rect(0px, 130px, 133px, 0px);
+
+  @media (380px <= width <= 450px) {
+    right: calc(var(--theme-spacing) * 2);
+  }
+
+  @media (width < 380px) {
+    display: none;
+  }
 }
 
 .heading {
-  padding-left: calc(var(--theme-spacing) * 2 + #{$img-width});
   position: relative;
   left: -12px; // Align text with parent element limit
+
+  @media (width > 450px) {
+    padding-left: calc(var(--theme-spacing) * 2 + #{$img-width});
+  }
 }
 
 .description {

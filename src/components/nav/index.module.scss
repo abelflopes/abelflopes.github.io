@@ -2,7 +2,6 @@
 
 .root {
   height: var(--theme-nav-height);
-  margin-top: calc(var(--theme-nav-height) * -1); // overlay banner
   z-index: 100;
 
   .container {

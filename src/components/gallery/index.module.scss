@@ -7,11 +7,11 @@
   width: 100%;
   box-sizing: border-box;
 
-  @media (600px < width < 850px) {
+  @media (600px < width < 900px) {
     width: calc(100% / 2);
   }
 
-  @media (width >= 850px) {
+  @media (width >= 900px) {
     width: calc(100% / 3);
   }
 }

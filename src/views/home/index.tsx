@@ -32,6 +32,7 @@ export const HomeView = (): React.ReactElement => (
     </Banner>
     <Nav
       sticky
+      className={styles.nav}
       links={[
         {
           href: "#experience-tech-stack-and-skills",
