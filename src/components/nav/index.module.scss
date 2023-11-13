@@ -1,12 +1,8 @@
-@import "../container/mixins";
-
 .root {
   height: var(--theme-nav-height);
   z-index: 100;
 
   .container {
-    @include container;
-
     display: flex;
     box-sizing: border-box;
     height: 100%;

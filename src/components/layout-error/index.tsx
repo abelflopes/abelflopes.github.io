@@ -3,7 +3,7 @@ import styles from "./index.module.scss";
 import React from "react";
 // Utils
 import classNames from "classnames";
-import { Container } from "@components/container";
+import { Container } from "@react-ck/container";
 interface LayoutProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: React.ReactNode;
   description: React.ReactNode;

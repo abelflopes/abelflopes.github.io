@@ -1,10 +1,10 @@
-import type { TextProps } from "@components/text";
+import type { TextProps } from "@react-ck/text";
 
 // TODO: project management, design mentoring, communication with product, scrum / sprint frameworks
 // TODO: specialised in React
 
 export const EXPERIENCE: Array<{
-  type: NonNullable<TextProps["skin"]>;
+  type: NonNullable<TextProps["type"]>;
   text: string;
 }> = [
   {

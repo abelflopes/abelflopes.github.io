@@ -6,13 +6,16 @@ import { createRoot } from "react-dom/client";
 // Router
 import { DefaultRouter } from "@router/router/Default";
 // Components
-import { Theme } from "@components/theme";
+import { ThemeProvider } from "@react-ck/theme";
+import { Button } from "@react-ck/button";
+import { Text } from "@react-ck/text";
+import { Card } from "@react-ck/card";
 
 const app = (
   <React.StrictMode>
-    <Theme>
+    <ThemeProvider>
       <DefaultRouter />
-    </Theme>
+    </ThemeProvider>
   </React.StrictMode>
 );
 

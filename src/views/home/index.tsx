@@ -5,30 +5,28 @@ import React from "react";
 import { DESCRIPTION, NAME, SOCIAL } from "@data/intro";
 // Components
 import { Layout } from "@components/layout-default";
-import { Banner } from "@components/banner";
+import { Banner } from "@react-ck/banner";
 import { Icon, type IconProps } from "@components/icon";
-import { Section } from "@components/section";
+import { Container } from "@react-ck/container";
 import { Footer } from "@components/footer";
 import { Nav } from "@components/nav";
-import { Text } from "@components/text";
+import { Text } from "@react-ck/text";
 import { EXPERIENCE } from "@data/experience";
-import { Separator } from "@components/separator";
+import { Divider } from "@react-ck/divider";
 import { PORTFOLIO, PORTFOLIO_DESCRIPTION } from "@data/portfolio";
-import { Card } from "@components/card";
-import { Gallery } from "@components/gallery";
+import { Card } from "@react-ck/card";
+import { GridColumn, GridContainer } from "@react-ck/grid";
 
 export const HomeView = (): React.ReactElement => (
   <Layout>
-    <Banner
-      heading={NAME}
-      media={{
-        alt: NAME,
-        src: "./abel-lopes.jpeg",
-      }}
-      social={Object.values(SOCIAL).map(({ title, url, icon }) => (
+    <Banner alt={NAME} src="./abel-lopes.jpeg">
+      <Text type="huge">{NAME}</Text>
+
+      <Text>{DESCRIPTION}</Text>
+
+      {Object.values(SOCIAL).map(({ title, url, icon }) => (
         <Icon key={icon} name={icon as IconProps["name"]} title={title} url={url} />
-      ))}>
-      {DESCRIPTION}
+      ))}
     </Banner>
     <Nav
       sticky
@@ -48,16 +46,16 @@ export const HomeView = (): React.ReactElement => (
         },
       ]}
     />
-    <Section>
-      <Text id="experience-tech-stack-and-skills" skin="h2">
+    <Container spacingY>
+      <Text id="experience-tech-stack-and-skills" type="h2">
         Experience, Tech Stack & Skills
       </Text>
       {EXPERIENCE.map((i) => (
-        <Text key={i.text} skin={i.type}>
+        <Text key={i.text} type={i.type} variation="inverted">
           {i.text}
         </Text>
       ))}
-      <Separator />
+      <Divider />
       <Text>
         Check the complete experience history in my&nbsp;
         <a href={SOCIAL.linkedin.url} target="_blank" rel="noreferrer">
@@ -69,9 +67,9 @@ export const HomeView = (): React.ReactElement => (
         </a>
         &nbsp; Profile.
       </Text>
-    </Section>
-    <Section colorScheme="inverted">
-      <Text id="projects" skin="h2">
+    </Container>
+    <Container spacingY>
+      <Text id="projects" type="h2">
         Projects
       </Text>
 
@@ -79,15 +77,19 @@ export const HomeView = (): React.ReactElement => (
         <Text key={item}>{item}</Text>
       ))}
 
-      <Gallery
-        className={styles.gallery}
-        items={PORTFOLIO.map((item) => (
-          <Card key={item.name} heading={item.name} image={item.image} link={item.link}>
-            <Text>{item.text}</Text>
-          </Card>
+      <GridContainer>
+        {PORTFOLIO.map((item) => (
+          <GridColumn key={item.name} size={4}>
+            <Card>
+              <Text>{item.name}</Text>
+              <Text>{item.image}</Text>
+              <Text>{item.link}</Text>
+              <Text>{item.text}</Text>
+            </Card>
+          </GridColumn>
         ))}
-      />
-    </Section>
+      </GridContainer>
+    </Container>
     <Footer
       details={[
         <div key="social">
@@ -97,7 +99,7 @@ export const HomeView = (): React.ReactElement => (
         </div>,
         <Text key="rights">All Rights Reserved @ {NAME}</Text>,
       ]}>
-      <Text id="contact" skin="h2">
+      <Text id="contact" type="h2">
         Contact
       </Text>
       <Text>

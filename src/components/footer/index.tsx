@@ -4,7 +4,7 @@ import React from "react";
 // Utils
 import classNames from "classnames";
 // Components
-import { Section } from "@components/section";
+import { Container } from "@react-ck/container";
 
 interface FooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode | React.ReactNode[];
@@ -18,10 +18,10 @@ export const Footer = ({
   ...otherProps
 }: Readonly<FooterProps>): React.ReactElement => {
   return (
-    <Section {...otherProps} className={classNames(className, styles.root)} tag="footer">
+    <Container spacingY {...otherProps} className={classNames(className, styles.root)}>
       {children}
 
       <div className={styles.details}>{details}</div>
-    </Section>
+    </Container>
   );
 };

@@ -22,7 +22,7 @@
       "@data/*": ["./data/*"],
       "@components/*": ["./src/components/*"],
       "@router/*": ["./src/router/*"],
-      "@views/*": ["./src/views/*"]
+      "@views/*": ["./src/views/*"],
     }
   },
   "include": ["./**/*"],

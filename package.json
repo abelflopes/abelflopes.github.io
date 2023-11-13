@@ -17,6 +17,14 @@
     "clean": "rm -rf generated-docs dist node_modules"
   },
   "dependencies": {
+    "@react-ck/banner": "^1.1.0",
+    "@react-ck/button": "^1.2.0",
+    "@react-ck/card": "^1.1.0",
+    "@react-ck/container": "^1.1.0",
+    "@react-ck/divider": "^1.1.0",
+    "@react-ck/grid": "^1.2.0",
+    "@react-ck/text": "^1.2.0",
+    "@react-ck/theme": "^1.2.0",
     "auto-zustand-selectors-hook": "^2.0.0",
     "classnames": "^2.3.2",
     "react": "^18.2.0",

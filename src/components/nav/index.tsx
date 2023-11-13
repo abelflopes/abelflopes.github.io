@@ -3,7 +3,8 @@ import styles from "./index.module.scss";
 import React, { useRef, useEffect } from "react";
 // Utils
 import classNames from "classnames";
-import { Text } from "@components/text";
+import { Text } from "@react-ck/text";
+import { Container } from "@react-ck/container";
 
 interface NavProps extends React.HTMLAttributes<HTMLDivElement> {
   sticky?: boolean;
@@ -50,7 +51,7 @@ export const Nav = ({
       className={classNames(className, styles.root, {
         [styles.sticky]: sticky,
       })}>
-      <div className={styles.container}>
+      <Container className={styles.container}>
         {links.map((link) => (
           <Text
             key={link.href}
@@ -64,7 +65,7 @@ export const Nav = ({
         ))}
 
         {children}
-      </div>
+      </Container>
     </nav>
   );
 };
